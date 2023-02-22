@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
+}
+
+header {
+    background-color: blueviolet;
+    height: 50px;
+}
+nav {
+
+    height: inherit;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+nav > a {
+    text-decoration: none;
+    color: black;
+    padding: 0 30px;
+    font-size: 20px;
+}
+.about_us {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.about_us img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+.about_us_descr {
+    display: flex;
+    flex-direction: column;
+}
+.about_us_descr * {
+    padding: 30px;
+}
+.myGame {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+.myGame > * {
+    text-align: center;
+}
+.myGame input, .myGame button {
+    border: none;
+    /* background-color: aqua; */
+    margin: 5px;
+    min-height: 30px;
+}
+.myGame button {
+    width: max-content;
+    background-color: blueviolet;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+.myGame input {
+    background-color: chartreuse;
+    outline: none;
+}
+.choosedBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Panel {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 650px;
+}
+.Panel > div {
+    width: 150px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    align-items: center;
+}
+.choosedElement {
+    border: 5px solid black;
+}
