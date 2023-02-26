@@ -176,5 +176,81 @@ const eventFunc = (e) => {
 for (let i=0; i<choosedEl.length; i++) {
     choosedEl[i].addEventListener("click", eventFunc)
 }
-choosedEl[2].removeEventListener("click", eventFunc)
+// choosedEl[2].removeEventListener("click", eventFunc)
+
+const timeIsOver=()=>{
+    alert("Время вышло!")
+}
+// setTimeout(timeIsOver, 2000)
+
+// const alarm = setInterval(()=>{
+//     let sleepy = confirm("Спишь?")
+//     if (sleepy) {
+//         console.log("tick")
+//     }
+//     else {
+//         clearInterval(alarm)
+//     }
+// }, 3000)
+// clearInterval(alarm)
+
+// console.log("1")
+// setTimeout(()=>{
+//     console.log("2")
+// }, 0)
+// console.log("3")
+
+const post=document.querySelector(".postsPanel")
+const showPosts=document.querySelector(".postsBlock button")
+// const postTitle=document.querySelector(".postsPanel h5")
+// const postBody=document.querySelector(".postsPanel span")
+function getPosts () {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+.then (res=>res.json())
+.then(data=>{
+    for (item of data) {
+        addPost(item.title, item.body)
+    }
+    // addPost(data[5].title, data[5].body)
+    // console.log(data)
+})
+.catch(err=>console.log(err.message))
+}
+
+function addPost(title,body){
+    const postTitle=document.createElement("h5")
+    const postBody=document.createElement("span")
+    const postItem=document.createElement("p")
+    postTitle.innerText=title
+    postBody.innerText=body
+    postItem.append(postTitle,postBody)
+    post.append(postItem)
+    
+}
+
+// function createPost(title,body,userID) {
+//     fetch("https://jsonplaceholder.typicode.com/posts", {
+//         method: 'POST',
+//         body: JSON.stringify ({
+//             // title: title,
+//             // body: body,
+//             // userID: userID,
+//             title,
+//             body,
+//             userID,
+//         }),
+//         headers: {
+//             'Content-type': 'application/json; charset=UTF-8'
+//         }
+//     })
+// .then (res=> {
+//     console.log(res)
+//     return res.json()
+// })
+// .catch (err=>console.log(err.message))
+// }
+
+// createPost ("title", "body", 15)
+showPosts.onclick = () => getPosts()
+
 
